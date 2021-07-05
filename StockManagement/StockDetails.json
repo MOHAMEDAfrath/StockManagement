@@ -1,0 +1,19 @@
+﻿{
+  "Stocks": [
+    {
+      "Name": "Infosys",
+      "NoOfShares": 30,
+      "Price": 1000
+    },
+    {
+      "Name": "Micromax",
+      "NoOfShares": 12,
+      "Price": 1005
+    },
+    {
+      "Name": "Samsung",
+      "NoOfShares": 147,
+      "Price": 1200
+    }
+  ]
+}
