@@ -12,8 +12,16 @@ namespace StockManagement
         public List<Stocks> stocks = new List<Stocks>();
 
     }
+   
     class Stocks
     {
+
+        public string accountholdername
+        {
+            get;
+            set;
+        }
+
         public string name
         {
             get;
@@ -29,5 +37,6 @@ namespace StockManagement
             get;
             set;
         }
+        
     }
 }

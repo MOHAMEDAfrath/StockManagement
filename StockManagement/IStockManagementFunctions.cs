@@ -11,7 +11,11 @@ namespace StockManagement
     {
         void DisplayTheStocks(List<Stocks> stocks);
         void CalculateTotalForEachShare(List<Stocks> stocks);
-        void CalculateTotalShare(List<Stocks> stocks);
+        double ValueofShareAccount(List<Stocks> stocks);
+
+        void StockAccount(string filepath);
+        void Buy(int amount, string company);
+        void Sell(int amount, string company);
 
     }
 }

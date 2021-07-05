@@ -15,23 +15,52 @@ namespace StockManagement
             //Reading and converting JSON to Objects
             StockDetail stockDetail = JsonConvert.DeserializeObject<StockDetail>(File.ReadAllText(filepath));
             StockManagement stockManagement = new StockManagement();
-            Console.WriteLine("Enter 1 to Display Stocks");
-            Console.WriteLine("Enter 2 to Calculate values for each stocks");
-            Console.WriteLine("Enter 3 to Calculate total values of stocks");
+            Console.WriteLine("Enter 1 to Display Stock Account");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
                 case 1:
-                    stockManagement.DisplayTheStocks(stockDetail.stocks);
+                    stockManagement.StockAccount(filepath);
+                    while (true)
+                    {
+                        Console.WriteLine("Enter 1 Value for the stock account value");
+                        Console.WriteLine("Enter 2 to buy a share");
+                        Console.WriteLine("Enter 3 to sell a share");
+                        Console.WriteLine("Enter 4 to print stock account report");
+                        int ioption = Convert.ToInt32(Console.ReadLine());
+                        switch (ioption)
+                        {
+                            case 1:
+                                stockManagement.CalculateTotalForEachShare(stockDetail.stocks);
+                                break;
+                            case 2:
+                                stockManagement.DisplayAvailableSharesToBuy();
+                                Console.WriteLine("Enter amount: ");
+                                int amount = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter company name in which you want to buy share: ");
+                                string companyname = Console.ReadLine();
+                                stockManagement.Buy(amount,companyname);
+                    
+                                break;
+                            case 3:
+                                Console.WriteLine("Enter amount: ");
+                                int sellamount = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter company name in which you want to sell  ");
+                                string companysellname = Console.ReadLine();
+                                stockManagement.Sell(sellamount, companysellname);
+                                break;
+
+                            case 4:
+                                stockManagement.StockAccount(filepath);
+                                break;
+                            case 5:
+                                return;
+                        }
+                    }
                     break;
-                case 2:
-                    stockManagement.CalculateTotalForEachShare(stockDetail.stocks);
-                    break;
-                case 3:
-                    stockManagement.CalculateTotalForEachShare(stockDetail.stocks);
-                    stockManagement.CalculateTotalShare(stockDetail.stocks);
-                    break;
+
             }
+        
 
         }
     }
