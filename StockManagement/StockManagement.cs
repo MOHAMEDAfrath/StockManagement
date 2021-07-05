@@ -11,6 +11,8 @@ namespace StockManagement
     //Implemented a interface
     class StockManagement : IStockManagementFunctions
     {
+        LinkedList<string> boughtshares = new LinkedList<string>();
+        LinkedList<string> soldshares = new LinkedList<string>();
         List<List<string>> stockavailability = new List<List<string>>();
         StockDetail stockDetail;
         public StockManagement()
@@ -42,12 +44,21 @@ namespace StockManagement
                 }
                 else
                 {
+                    boughtshares.AddLast(company);
                     stockavailability[i][1] = Convert.ToString(Convert.ToInt32(stockavailability[i][1])-1);
                     finalamount = amount;
                 }
             }
             return amount;
          }
+        public void BoughtShares()
+        {
+            foreach(var members in boughtshares)
+            {
+                Console.WriteLine("The Bought shares are :");
+                Console.WriteLine("{0}",members);
+            }
+        }
         /// <summary>
         /// Stocks the account.
         /// </summary>
