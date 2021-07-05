@@ -27,7 +27,8 @@ namespace StockManagement
                         Console.WriteLine("Enter 2 to buy a share");
                         Console.WriteLine("Enter 3 to sell a share");
                         Console.WriteLine("Enter 4 to print stock account report");
-                        Console.WriteLine("Enter 5 to print Bought Stocks");
+                        Console.WriteLine("Enter 5 to print Bought and sold Stocks");
+                        Console.WriteLine("Enter 6 to Exit");
                         int ioption = Convert.ToInt32(Console.ReadLine());
                         switch (ioption)
                         {
@@ -56,6 +57,8 @@ namespace StockManagement
                                 break;
                             case 5:
                                 stockManagement.BoughtShares();
+                                stockManagement.SoldShares();
+                                stockManagement.DateandTimeOfTransaction();
                                 break;
                             case 6:
                                 return;

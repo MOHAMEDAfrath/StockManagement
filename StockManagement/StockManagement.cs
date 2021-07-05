@@ -13,6 +13,7 @@ namespace StockManagement
     {
         LinkedList<string> boughtshares = new LinkedList<string>();
         LinkedList<string> soldshares = new LinkedList<string>();
+        LinkedList<string> DateTimeOfTransaction = new LinkedList<string>();
         List<List<string>> stockavailability = new List<List<string>>();
         StockDetail stockDetail;
         public StockManagement()
@@ -51,18 +52,31 @@ namespace StockManagement
             }
             return amount;
          }
+        /// <summary>
+        /// Bought shares details.
+        /// </summary>
         public void BoughtShares()
         {
-            foreach(var members in boughtshares)
+            Console.WriteLine("The Bought shares are :");
+            foreach (var members in boughtshares)
             {
-                Console.WriteLine("The Bought shares are :");
+                
                 Console.WriteLine("{0}",members);
+            }
+        }
+        public void SoldShares()
+        {
+             Console.WriteLine("The sold shares are :");
+            foreach (var members in soldshares)
+            {
+               
+                Console.WriteLine("{0}", members);
             }
         }
         /// <summary>
         /// Stocks the account.
         /// </summary>
-        
+
         public void StockAccount(string filepath)
         {
             
@@ -97,11 +111,21 @@ namespace StockManagement
         {
             int value = Check(company, amount);
             AddStockAccount(stockDetail.stocks, company, amount);
-            
+            DateTime now = DateTime.Now;
+            Console.WriteLine("Bought Share at: "+now);
+            DateTimeOfTransaction.AddFirst("Bought "+company+" at "+Convert.ToString(now));
         }
         /// <summary>
         /// Sells the specified share.
         /// </summary>
+        public void DateandTimeOfTransaction()
+        {
+            Console.WriteLine("The Date and Time of transactions");
+            foreach(var DatesTime in DateTimeOfTransaction)
+            {
+                Console.WriteLine(DatesTime);
+            }
+        }
         
         public void Sell(int amount,string company)
         {
@@ -111,7 +135,7 @@ namespace StockManagement
             {
                 if (member.name == company)
                 {
-                    Console.WriteLine("Updated"+member.name);
+                    Console.WriteLine("Updated "+member.name);
                     value = member.noofshares;
                     stockDetail.stocks.Remove(member);
                     stocks1.accountholdername = "Ram";
@@ -122,6 +146,10 @@ namespace StockManagement
                 }
                 
             }
+            DateTime now = DateTime.Now;
+            Console.WriteLine("Sold the Share at: " + now);
+            DateTimeOfTransaction.AddFirst("Sold " + company + " at " + Convert.ToString(now));
+            soldshares.AddLast(company);
             stockDetail.stocks.AddLast(stocks1);
             File.WriteAllText(@"C:\Users\afrat\source\repos\StockManagement\StockManagement\StockDetails.json", JsonConvert.SerializeObject(stockDetail));
 
