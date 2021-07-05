@@ -1,1 +1,34 @@
-{"stocks":[{"accountholdername":"Ram","name":"Infosys","noofshares":30,"price":1000},{"accountholdername":"Ram","name":"Micromax","noofshares":12,"price":1005},{"accountholdername":"Ram","name":"Samsung","noofshares":148,"price":1},{"accountholdername":"Ram","name":"Infy","noofshares":1,"price":1000},{"accountholdername":"Ram","name":"TCS","noofshares":3,"price":1000}]}
+{
+  "stocks": 
+  [
+    {
+      "accountholdername": "Ram",
+      "name": "Infosys",
+      "noofshares": 30,
+      "price": 1000
+    },
+    {
+      "accountholdername": "Ram",
+      "name": "Micromax",
+      "noofshares": 12,
+      "price": 1005
+    },
+    {
+      "accountholdername": "Ram",
+      "name": "Samsung",
+      "noofshares": 148,
+      "price": 1
+    },
+    {
+      "accountholdername": "Ram",
+      "name": "TCS",
+      "noofshares": 3,
+      "price": 1000
+    },
+    {
+      "accountholdername": "Ram",
+      "name": "Infy",
+      "noofshares": 1,
+      "price": 1000
+    }
+  ]}

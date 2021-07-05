@@ -63,7 +63,7 @@ namespace StockManagement
         /// Displays the stocks.
         /// </summary>
         
-        public void DisplayTheStocks(List<Stocks> stocks)
+        public void DisplayTheStocks(LinkedList<Stocks> stocks)
         {
             foreach (var stock in stocks)
             {
@@ -111,7 +111,7 @@ namespace StockManagement
                 }
                 
             }
-            stockDetail.stocks.Add(stocks1);
+            stockDetail.stocks.AddLast(stocks1);
             File.WriteAllText(@"C:\Users\afrat\source\repos\StockManagement\StockManagement\StockDetails.json", JsonConvert.SerializeObject(stockDetail));
 
 
@@ -120,7 +120,7 @@ namespace StockManagement
         /// <summary>
         /// Adds the stock account.
         /// </summary>
-        public void AddStockAccount(List<Stocks> stocks,string company,int amount)
+        public void AddStockAccount(LinkedList<Stocks> stocks,string company,int amount)
         {
             Stocks stocks1 = new Stocks();
             int value = 0;
@@ -146,7 +146,7 @@ namespace StockManagement
 
                 }
             }
-                stocks.Add(stocks1);
+                stocks.AddLast(stocks1);
                 File.WriteAllText(@"C:\Users\afrat\source\repos\StockManagement\StockManagement\StockDetails.json", JsonConvert.SerializeObject(stockDetail));
 
             
@@ -156,7 +156,7 @@ namespace StockManagement
 
 
         }
-        public void CalculateTotalForEachShare(List<Stocks> stocks)
+        public void CalculateTotalForEachShare(LinkedList<Stocks> stocks)
         {
             int valueofthisstock = 0;
             foreach (var stock in stocks)
@@ -170,7 +170,7 @@ namespace StockManagement
             }
         
         }
-        public double ValueofShareAccount(List<Stocks> stocks)
+        public double ValueofShareAccount(LinkedList<Stocks> stocks)
         {
             double totalstock = 0;
             foreach (var stock in stocks)

@@ -9,7 +9,7 @@ namespace StockManagement
 {
     class StockDetail
     {
-        public List<Stocks> stocks = new List<Stocks>();
+        public LinkedList<Stocks> stocks = new LinkedList<Stocks>();
 
     }
    

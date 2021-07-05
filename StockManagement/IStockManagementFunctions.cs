@@ -9,9 +9,9 @@ namespace StockManagement
     //Interface with Stockmanagement functions.
     interface IStockManagementFunctions
     {
-        void DisplayTheStocks(List<Stocks> stocks);
-        void CalculateTotalForEachShare(List<Stocks> stocks);
-        double ValueofShareAccount(List<Stocks> stocks);
+        void DisplayTheStocks(LinkedList<Stocks> stocks);
+        void CalculateTotalForEachShare(LinkedList<Stocks> stocks);
+        double ValueofShareAccount(LinkedList<Stocks> stocks);
 
         void StockAccount(string filepath);
         void Buy(int amount, string company);
